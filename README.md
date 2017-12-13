@@ -1,5 +1,5 @@
 # tubugl-recipes
-recipes(demos) with tubugl(micro personal webgl framework)
+recipes(demos) with tubugl(personal micro webgl framework)
 
 ## receipes
 
