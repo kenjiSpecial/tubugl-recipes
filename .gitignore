@@ -17,6 +17,7 @@ yarn.lock
 package-lock.json
 
 dist
+!docs/*/dist
 
 .idea
 
@@ -25,3 +26,5 @@ dist
 .vscode
 
 build
+
+doc
