@@ -1,0 +1,17 @@
+{
+  "name": "image-filter-tubugl",
+  "version": "1.0.0",
+  "description": "image filtering with tubugl",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "dat.gui": "^0.6.5",
+    "gsap": "^1.20.3",
+    "stats.js": "https://github.com/mrdoob/stats.js",
+    "tubugl-core": "https://github.com/kenjiSpecial/tubugl-core"
+  }
+}
