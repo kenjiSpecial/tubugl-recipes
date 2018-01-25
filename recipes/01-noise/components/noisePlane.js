@@ -25,7 +25,7 @@ export class NoisePlane extends UvPlane {
 	_updateModelMatrix() {
 		let obj = super._updateModelMatrix();
 		if (obj) {
-			this._textObject.position.y = -this._size / 2 - 20;
+			this._textObject.position.y = this.position.y - this._size / 2 - 10;
 			this._textObject.position.x = this.position.x;
 		}
 	}
@@ -36,8 +36,12 @@ export class NoisePlane extends UvPlane {
 			this._text,
 			this._fontData.json,
 			this._fontData.texture,
-			14
+			12
 		);
+		this._textObject.smoothing = 1 / 2;
+		this._textObject.hintAmount = 0;
+		this._textObject.subpixelAmount = 0;
+
 		this._textObject.position.y = -this._size / 2 - 20;
 		this._textObject.position.x = this.position.x;
 	}
@@ -52,7 +56,8 @@ export class NoisePlane extends UvPlane {
 		super.update(camera);
 		if (this._program.getUniforms('uTime'))
 			this._gl.uniform1f(this._program.getUniforms('uTime').location, this._time);
-		this._gl.uniform2f(this._program.getUniforms('uSize').location, this._size, this._size);
+		if (this._program.getUniforms('uSize'))
+			this._gl.uniform2f(this._program.getUniforms('uSize').location, this._size, this._size);
 		return this;
 	}
 }
@@ -66,6 +71,97 @@ export class Noise3Plane extends NoisePlane {
 			this._gl,
 			require('./shaders/base.vert.glsl'),
 			require('./shaders/genericNoise3.frag.glsl')
+		);
+	}
+}
+
+export class PerlinNoisePlane extends NoisePlane {
+	constructor(gl, params = {}, width, height, widthSegments = 1, heightSegments = 1) {
+		super(gl, params, width, height, widthSegments, heightSegments);
+	}
+	_makeProgram() {
+		this._program = new Program(
+			this._gl,
+			require('./shaders/base.vert.glsl'),
+			require('./shaders/perlin.frag.glsl')
+		);
+	}
+}
+
+export class ClassicPerlin2DNoisePlane extends NoisePlane {
+	constructor(gl, params = {}, width, height, widthSegments = 1, heightSegments = 1) {
+		super(gl, params, width, height, widthSegments, heightSegments);
+	}
+	_makeProgram() {
+		this._program = new Program(
+			this._gl,
+			require('./shaders/base.vert.glsl'),
+			require('./shaders/classic2DPerlin.frag.glsl')
+		);
+	}
+}
+
+export class ClassicPerlin3DNoisePlane extends NoisePlane {
+	constructor(gl, params = {}, width, height, widthSegments = 1, heightSegments = 1) {
+		super(gl, params, width, height, widthSegments, heightSegments);
+	}
+	_makeProgram() {
+		this._program = new Program(
+			this._gl,
+			require('./shaders/base.vert.glsl'),
+			require('./shaders/classic3DPerlin.frag.glsl')
+		);
+	}
+}
+
+export class Simplex2DNoisePlane extends NoisePlane {
+	constructor(gl, params = {}, width, height, widthSegments = 1, heightSegments = 1) {
+		super(gl, params, width, height, widthSegments, heightSegments);
+	}
+	_makeProgram() {
+		this._program = new Program(
+			this._gl,
+			require('./shaders/base.vert.glsl'),
+			require('./shaders/simplex2d.frag.glsl')
+		);
+	}
+}
+
+export class Simplex3DNoisePlane extends NoisePlane {
+	constructor(gl, params = {}, width, height, widthSegments = 1, heightSegments = 1) {
+		super(gl, params, width, height, widthSegments, heightSegments);
+	}
+	_makeProgram() {
+		this._program = new Program(
+			this._gl,
+			require('./shaders/base.vert.glsl'),
+			require('./shaders/simplex3d.frag.glsl')
+		);
+	}
+}
+
+export class Simplex3DNoiseVer2Plane extends NoisePlane {
+	constructor(gl, params = {}, width, height, widthSegments = 1, heightSegments = 1) {
+		super(gl, params, width, height, widthSegments, heightSegments);
+	}
+	_makeProgram() {
+		this._program = new Program(
+			this._gl,
+			require('./shaders/base.vert.glsl'),
+			require('./shaders/simplex3dpart2.frag.glsl')
+		);
+	}
+}
+
+export class Simplex4DNoisePlane extends NoisePlane {
+	constructor(gl, params = {}, width, height, widthSegments = 1, heightSegments = 1) {
+		super(gl, params, width, height, widthSegments, heightSegments);
+	}
+	_makeProgram() {
+		this._program = new Program(
+			this._gl,
+			require('./shaders/base.vert.glsl'),
+			require('./shaders/simplex4d.frag.glsl')
 		);
 	}
 }

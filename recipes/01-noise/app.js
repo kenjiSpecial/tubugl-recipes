@@ -6,7 +6,17 @@ import uvImageURL from '../assets/uv_img.jpg';
 
 import { Program, ArrayBuffer, IndexArrayBuffer, Texture } from 'tubugl-core';
 import { OrthographicCamera, CameraController } from 'tubugl-camera';
-import { NoisePlane, Noise3Plane } from './components/noisePlane';
+import {
+	NoisePlane,
+	Noise3Plane,
+	PerlinNoisePlane,
+	ClassicPerlin2DNoisePlane,
+	ClassicPerlin3DNoisePlane,
+	Simplex2DNoisePlane,
+	Simplex3DNoisePlane,
+	Simplex4DNoisePlane,
+	Simplex3DNoiseVer2Plane
+} from './components/noisePlane';
 
 import fontJson from '../assets/roboto.json';
 import fontImgURL from '../assets/roboto.png';
@@ -64,15 +74,60 @@ export default class App {
 			text: '2d generic noise',
 			fontData: { texture: this._fontTexture, json: fontJson }
 		});
-		plane.position.x = -250;
 		this._planes.push(plane);
 
 		let plane2 = new Noise3Plane(this.gl, {
 			text: '3d generic noise',
 			fontData: { texture: this._fontTexture, json: fontJson }
 		});
-		plane2.position.x = -125;
 		this._planes.push(plane2);
+
+		let plane3 = new PerlinNoisePlane(this.gl, {
+			text: 'perlin noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		this._planes.push(plane3);
+
+		let plane4 = new ClassicPerlin2DNoisePlane(this.gl, {
+			text: 'Classic Perlin 2D Noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		this._planes.push(plane4);
+
+		let plane5 = new ClassicPerlin3DNoisePlane(this.gl, {
+			text: 'Classic Perlin 3D Noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		this._planes.push(plane5);
+
+		let plane6 = new Simplex2DNoisePlane(this.gl, {
+			text: '2D Simplex noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		this._planes.push(plane6);
+
+		let plane7 = new Simplex3DNoisePlane(this.gl, {
+			text: '3D Simplex noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		this._planes.push(plane7);
+
+		let plane8 = new Simplex3DNoiseVer2Plane(this.gl, {
+			text: '3D Simplex ver2 noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		this._planes.push(plane8);
+
+		let plane9 = new Simplex4DNoisePlane(this.gl, {
+			text: '4D Simplex noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		this._planes.push(plane9);
+
+		this._planes.forEach((plane, index) => {
+			plane.position.x = (index % 4 - 1.5) * 140;
+			plane.position.y = -(parseInt(index / 4) - 1) * 140;
+		});
 	}
 
 	_makeTexture() {

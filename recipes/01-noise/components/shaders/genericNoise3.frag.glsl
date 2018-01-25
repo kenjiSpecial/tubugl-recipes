@@ -57,7 +57,7 @@ uniform float uTime;
 varying vec2 vUv;
 
 void main() {
-    float rand = noise( vec3(vUv * uSize,  uTime * 10.)  ) ;
+    float rand = noise( vec3(vUv * 128.,  uTime )  ) ;
     
     gl_FragColor = vec4(vec3(rand), 1.0);
 }
