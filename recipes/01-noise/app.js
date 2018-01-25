@@ -6,7 +6,7 @@ import uvImageURL from '../assets/uv_img.jpg';
 
 import { Program, ArrayBuffer, IndexArrayBuffer, Texture } from 'tubugl-core';
 import { OrthographicCamera, CameraController } from 'tubugl-camera';
-import { NoisePlane } from './components/noisePlane';
+import { NoisePlane, Noise3Plane } from './components/noisePlane';
 
 import fontJson from '../assets/roboto.json';
 import fontImgURL from '../assets/roboto.png';
@@ -58,11 +58,21 @@ export default class App {
 	}
 
 	_makePlane() {
-		this._plane = new NoisePlane(this.gl, {
+		this._planes = [];
+
+		let plane = new NoisePlane(this.gl, {
 			text: '2d generic noise',
-			fontData: { texture: this._fontTexture, json: fontJson, x: -200 }
+			fontData: { texture: this._fontTexture, json: fontJson }
 		});
-		this._plane.position.x = -200;
+		plane.position.x = -250;
+		this._planes.push(plane);
+
+		let plane2 = new Noise3Plane(this.gl, {
+			text: '3d generic noise',
+			fontData: { texture: this._fontTexture, json: fontJson }
+		});
+		plane2.position.x = -125;
+		this._planes.push(plane2);
 	}
 
 	_makeTexture() {
@@ -93,7 +103,9 @@ export default class App {
 		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 
 		this._camera.update();
-		this._plane.render(this._camera);
+		this._planes.forEach(plane => {
+			plane.render(this._camera);
+		});
 	}
 
 	animateOut() {
