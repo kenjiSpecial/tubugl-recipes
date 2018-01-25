@@ -22,7 +22,7 @@ uniform float uTime;
 varying vec2 vUv;
 
 void main() {
-    float rand = noise(vUv * uSize + vec2( (uTime + uSize)) ) ;
+    float rand = noise(vUv * uSize + vec2( (uTime )) ) ;
     
     gl_FragColor = vec4(vec3(rand), 1.0);
 }

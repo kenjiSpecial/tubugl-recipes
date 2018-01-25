@@ -20,9 +20,9 @@
     "tubugl-3d-shape": "^1.3.2",
     "tubugl-camera": "^1.3.2",
     "tubugl-constants": "^1.0.3",
-    "tubugl-core": "kenjiSpecial/tubugl-core",
-    "tubugl-font": "kenjiSpecial/tubugl-font",
-    "tubugl-math": "kenjiSpecial/tubugl-math"
+    "tubugl-core": "^1.1.8",
+    "tubugl-font": "^1.0.0",
+    "tubugl-math": "^1.1.9"
   },
   "devDependencies": {
     "minimist": "^1.2.0",

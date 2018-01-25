@@ -8,6 +8,9 @@ import { Program, ArrayBuffer, IndexArrayBuffer, Texture } from 'tubugl-core';
 import { OrthographicCamera, CameraController } from 'tubugl-camera';
 import { NoisePlane } from './components/noisePlane';
 
+import fontJson from '../assets/roboto.json';
+import fontImgURL from '../assets/roboto.png';
+
 export default class App {
 	constructor(params = {}) {
 		this._width = params.width ? params.width : window.innerWidth;
@@ -27,7 +30,6 @@ export default class App {
 
 		this._makeCamera();
 		this._makeCameraController();
-		this._makePlane();
 
 		this.resize(this._width, this._height);
 	}
@@ -56,11 +58,32 @@ export default class App {
 	}
 
 	_makePlane() {
-		this._plane = new NoisePlane(this.gl, { name: '2d generic noise' });
+		this._plane = new NoisePlane(this.gl, {
+			text: '2d generic noise',
+			fontData: { texture: this._fontTexture, json: fontJson, x: -200 }
+		});
+		this._plane.position.x = -200;
+	}
+
+	_makeTexture() {
+		this._fontTexture = new Texture(this.gl, this.gl.RGBA, this.gl.RGBA);
+		this._fontTexture
+			.bind()
+			.setFilter()
+			.wrap()
+			.fromImage(this._fontImg, this._fontImg.width, this._fontImg.height);
 	}
 
 	animateIn() {
-		this._playAndStop();
+		this._fontImg = new Image();
+		this._fontImg.onload = () => {
+			this._isLoaded = true;
+			this._makeTexture();
+			this._makePlane();
+			this._playAndStop();
+		};
+		this._fontImg.src = fontImgURL;
+		// this._playAndStop();
 	}
 
 	loop() {
