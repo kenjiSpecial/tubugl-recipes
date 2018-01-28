@@ -6,5 +6,12 @@ GitHub: [https://github.com/kenjiSpecial/tubugl-3d-shape](https://github.com/ken
 
 [codes](https://github.com/kenjiSpecial/tubugl-3d-shape/blob/master/examples/app00) 
 
+[![](./app01/thumbnail.png)](./app01/index.html)
+
+[codes](https://github.com/kenjiSpecial/tubugl-3d-shape/blob/master/examples/app00) 
+
+[![](./app02/thumbnail.png)](./app02/index.html)
+
+[codes](https://github.com/kenjiSpecial/tubugl-3d-shape/blob/master/examples/app00) 
 
 all examples were made with [tubugl](https://github.com/kenjiSpecial/tubugl)
