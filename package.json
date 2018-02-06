@@ -5,9 +5,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start00": "parcel recipes/00-2d-image-filter/index.html --no-hmr",
-    "start01": "parcel recipes/01-noise/index.html --no-hmr",
-    "start02": "parcel recipes/02-fur-earth/index.html --no-hmr",
+    "00": "parcel recipes/00-2d-image-filter/index.html --no-hmr",
+    "01": "parcel recipes/01-noise/index.html --no-hmr",
+    "02": "parcel recipes/02-fur-earth/index.html --no-hmr",
+    "03": "parcel recipes/03-obj-loader/index.html --no-hmr",
     "dist00": "parcel build recipes/00-2d-image-filter/index.html -d docs/app00 --public-url ./",
     "dist01": "parcel build recipes/01-noise/index.html -d docs/app01 --public-url ./",
     "dist02": "parcel build recipes/02-fur-earth/index.html -d docs/app02 --public-url ./",
@@ -18,16 +19,18 @@
   },
   "dependencies": {
     "dat.gui": "^0.6.5",
+    "gl-matrix": "^2.4.0",
     "gsap": "^1.20.3",
+    "obj-mtl-loader": "^0.0.5",
     "parcel-plugin-glsl": "kenjiSpecial/parcel-plugin-glsl",
     "stats.js": "https://github.com/mrdoob/stats.js.git",
     "tubugl-2d-shape": "kenjiSpecial/tubugl-2d-shape",
     "tubugl-3d-shape": "^1.3.2",
-    "tubugl-camera": "^1.3.2",
+    "tubugl-camera": "^1.3.3",
     "tubugl-constants": "^1.0.3",
-    "tubugl-core": "^1.1.8",
+    "tubugl-core": "^1.1.9",
     "tubugl-font": "^1.0.1",
-    "tubugl-math": "^1.1.9"
+    "tubugl-math": "^1.1.10"
   },
   "devDependencies": {
     "minimist": "^1.2.0",

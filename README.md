@@ -10,6 +10,10 @@ recipes(demos) with tubugl(personal micro webgl framework)
 
 I developed demo with  
 
+## external codes
+
+https://github.com/tiansijie/ObjLoader
+
 ## tubugl
 
 [tubugl](https://github.com/kenjiSpecial/tubugl)
