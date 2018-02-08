@@ -14,4 +14,8 @@ GitHub: [https://github.com/kenjiSpecial/tubugl-recipes](https://github.com/kenj
 
 [codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/02-fur-earth) 
 
+[![](./app03/thumbnail.png)](./app03/index.html)
+
+[codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/03-load-json) 
+
 all examples were made with [tubugl](https://github.com/kenjiSpecial/tubugl)
