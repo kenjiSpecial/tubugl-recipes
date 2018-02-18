@@ -14,11 +14,15 @@ GitHub: [https://github.com/kenjiSpecial/tubugl-recipes](https://github.com/kenj
 
 [codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/02-fur-earth) 
 
-### Skybox with cubemap texture
-
 [![](./app03/thumbnail.png)](./app03/index.html)
 
-[codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/03-cube-map-texture) 
+[codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/03-load-json) 
+
+### Skybox with cubemap texture
+
+[![](./app04/thumbnail.png)](./app04/index.html)
+
+[codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/04-cubemap-texture) 
 
 
 all examples were made with [tubugl](https://github.com/kenjiSpecial/tubugl)
