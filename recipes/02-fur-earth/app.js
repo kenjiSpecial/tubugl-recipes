@@ -254,6 +254,7 @@ export default class App {
 		// 	this._program.getUniforms('uWindowRate').location,
 		// 	this._height / this._width
 		// );
+		this._camera.updateSize(this._width, this._height);
 	}
 
 	destroy() {}

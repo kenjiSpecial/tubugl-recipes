@@ -5,15 +5,18 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start00": "parcel recipes/00-2d-image-filter/index.html --no-hmr",
-    "start01": "parcel recipes/01-noise/index.html --no-hmr",
-    "start02": "parcel recipes/02-fur-earth/index.html --no-hmr",
+    "00": "parcel recipes/00-2d-image-filter/index.html --no-hmr",
+    "01": "parcel recipes/01-noise/index.html --no-hmr",
+    "02": "parcel recipes/02-fur-earth/index.html --no-hmr",
+    "03": "parcel recipes/03-cube-map-texture/index.html --no-hmr",
     "dist00": "parcel build recipes/00-2d-image-filter/index.html -d docs/app00 --public-url ./",
     "dist01": "parcel build recipes/01-noise/index.html -d docs/app01 --public-url ./",
     "dist02": "parcel build recipes/02-fur-earth/index.html -d docs/app02 --public-url ./",
+    "dist03": "parcel build recipes/03-cube-map-texture/index.html -d docs/app03 --public-url ./",
     "screenshot00": "node ./node/screenshot.js --dir=app00",
     "screenshot01": "node ./node/screenshot.js --dir=app01",
     "screenshot02": "node ./node/screenshot.js --dir=app02",
+    "screenshot03": "node ./node/screenshot.js --dir=app03",
     "docs": "python -m SimpleHTTPServer 8080"
   },
   "dependencies": {
@@ -21,13 +24,13 @@
     "gsap": "^1.20.3",
     "parcel-plugin-glsl": "kenjiSpecial/parcel-plugin-glsl",
     "stats.js": "https://github.com/mrdoob/stats.js.git",
-    "tubugl-2d-shape": "kenjiSpecial/tubugl-2d-shape",
-    "tubugl-3d-shape": "^1.3.2",
+    "tubugl-2d-shape": "^1.1.1",
+    "tubugl-3d-shape": "^1.6.0",
     "tubugl-camera": "^1.3.2",
-    "tubugl-constants": "^1.0.3",
-    "tubugl-core": "^1.1.8",
+    "tubugl-constants": "^1.1.1",
+    "tubugl-core": "^1.3.1",
     "tubugl-font": "^1.0.1",
-    "tubugl-math": "^1.1.9"
+    "tubugl-math": "^1.1.10"
   },
   "devDependencies": {
     "minimist": "^1.2.0",
