@@ -52,27 +52,21 @@ float snoise(vec3 p) {
 }
 
 float snoiseFractal(vec3 m) {
-	return   0.5333333* snoise(m)
-				+0.2666667* snoise(2.0*m)
-				+0.1333333* snoise(4.0*m)
-				+0.0666667* snoise(8.0*m);
+	return   0.666* snoise(m)
+				+0.3333* snoise(2.0*m);
 }
 
-uniform vec2 uSize;
+// uniform vec2 uSize;
 uniform float uTime;
 
 varying vec2 vUv;
 
 void main() {
-	vec3 p3 = vec3(vUv, uTime*0.025);
+	vec3 p3 = vec3(vUv.x * 20., vUv.y  +  uTime * 0.5, uTime*0.1 );
 
 	float value;
 
-	if (vUv.x <= 0.3) {
-		value = snoise(p3*32.0);
-	} else {
-		value = snoiseFractal(p3*8.0+8.0);
-	}
+	value = snoiseFractal(p3*8.0+8.0);
   
     value = 0.5 + 0.5*value;
     

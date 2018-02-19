@@ -24,5 +24,11 @@ GitHub: [https://github.com/kenjiSpecial/tubugl-recipes](https://github.com/kenj
 
 [codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/04-cubemap-texture) 
 
+### fire with framebuffer
+
+[![](./app05/thumbnail.png)](./app05/index.html)
+
+[codes](https://github.com/kenjiSpecial/tubugl-recipes/tree/master/recipes/05-fire) 
+
 
 all examples were made with [tubugl](https://github.com/kenjiSpecial/tubugl)
